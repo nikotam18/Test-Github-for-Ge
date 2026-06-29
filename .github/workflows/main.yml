@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
       - name: Run FoD SAST Scan
-        uses: fortify/github-action@v3
+        uses: fortify/github-action@v1
         with:
           sast-scan: true
         env:
