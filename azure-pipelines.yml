@@ -21,17 +21,15 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-    - task: FortifyOnDemandStatic@9
-      inputs:
-        FortifyProjects: '$(Build.SourcesDirectory)'
-        ScanCentralLocation: 'C:\Program Files\Fortify\Fortify_SCA_24.4.1\bin'
-        FodConnection: 'Nikolasisi Global'
-        ReleaseOptions: '0'
-        ReleaseId: 197771
-        EntitlementSelection: '1'
-        EntitlementPreference: '0'
-        OverrideScanSettings: '2'
-        InProgressScanActionType: '2'
-        RemediationScanPreference: '0'
-        BuildType: 'none'
-        PolicyFailAction: '1'
+- task: FortifyOnDemandStatic@9
+  inputs:
+    FortifyProjects: '$(Build.SourcesDirectory)'
+    FodConnection: 'Nikolasisi Global'
+    ReleaseOptions: '0'
+    ReleaseId: 197771
+    EntitlementSelection: '1'
+    EntitlementPreference: '2'
+    OverrideScanSettings: '2'
+    InProgressScanActionType: '2'
+    RemediationScanPreference: '0'
+    BuildType: 'none'
